@@ -10,68 +10,85 @@
 
 <style>
 
-body {
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family:'Noto Sans Devanagari', sans-serif;
-  background:url('bg1.jpg') no-repeat center/cover;
-  color:#5a2d0c;
+}
+
+section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   text-align:center;
-  overflow-x:hidden;
+  padding:20px;
+  color:#4a2c1a;
+  position:relative;
 }
 
 /* overlay */
 .overlay{
-  background:rgba(255,255,255,0.85);
-  padding:20px;
+  background:rgba(255,255,255,0.88);
+  padding:25px;
+  border-radius:20px;
+  max-width:500px;
+  width:100%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* headings */
+/* backgrounds */
+.bg1{ background:url('bg1.jpg') center/cover no-repeat; }
+.bg2{ background:url('bg2.jpg') center/cover no-repeat; }
+.bg3{ background:url('bg3.jpg') center/cover no-repeat; }
+.bg4{ background:url('bg4.jpg') center/cover no-repeat; }
+
+/* text styles */
 h1{
-  font-size:28px;
   color:#b30000;
   margin:10px 0;
 }
 
-.big-name{
+.big{
   font-size:26px;
   font-weight:700;
   color:#8b0000;
 }
 
-.bold-text{
-  font-weight:600;
+.text{
   font-size:16px;
-  line-height:1.6;
+  line-height:1.7;
+  font-weight:600;
 }
 
 /* ganpati */
 .ganpati img{
   width:120px;
-  margin:20px 0;
+  margin:15px 0;
 }
 
 /* map button */
 .map-btn{
   display:inline-block;
-  padding:12px 20px;
+  margin-top:15px;
+  padding:12px 22px;
   background:#b30000;
   color:#fff;
-  border-radius:25px;
+  border-radius:30px;
   text-decoration:none;
-  margin-top:10px;
   font-weight:600;
 }
 
 /* gallery */
 .gallery{
-  display:flex;
-  overflow-x:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:10px;
-  padding:20px;
 }
 
 .gallery img{
-  width:200px;
+  width:100%;
   border-radius:15px;
 }
 
@@ -81,40 +98,31 @@ h1{
   bottom:20px;
   right:20px;
   background:#ff6600;
-  color:#fff;
-  padding:12px;
+  color:white;
+  padding:14px;
   border-radius:50%;
-  font-size:18px;
+  font-size:20px;
   cursor:pointer;
 }
 
-/* floating diya */
-.diya{
-  position:fixed;
-  top:10%;
-  left:5%;
-  width:40px;
-  animation:float 4s infinite ease-in-out;
+/* smooth scroll */
+html{
+  scroll-behavior:smooth;
+}
+
+/* floating particles */
+.particle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:gold;
+  border-radius:50%;
+  opacity:0.7;
+  animation:float 6s infinite;
 }
 
 @keyframes float{
   0%{transform:translateY(0);}
-  50%{transform:translateY(-20px);}
-  100%{transform:translateY(0);}
-}
-
-/* particles */
-.particle{
-  position:fixed;
-  width:5px;
-  height:5px;
-  background:gold;
-  border-radius:50%;
-  animation:particleMove 6s infinite;
-}
-
-@keyframes particleMove{
-  0%{transform:translateY(0);opacity:1;}
   100%{transform:translateY(-200px);opacity:0;}
 }
 
@@ -123,84 +131,112 @@ h1{
 
 <body>
 
-<div class="overlay">
+<!-- SECTION 1 -->
+<section class="bg1">
+  <div class="overlay">
 
-<p style="font-size:14px;">|| श्री गणेशाय नमः ||</p>
+    <p>|| श्री गणेशाय नमः ||</p>
 
-<div class="ganpati">
-  <img src="ganpati.png">
-</div>
+    <div class="ganpati">
+      <img src="ganpati.png">
+    </div>
 
-<h1>शुभविवाह सोहळा</h1>
+    <h1>शुभविवाह सोहळा</h1>
 
-<p class="big-name">चि. मयुर</p>
+  </div>
+</section>
 
-<p class="bold-text">
-कै.ह.भ.प. महाद कोंडीबा बुचुडे पा. यांचे नातु <br>
-व सौ. कविता व श्री. दिलीप महादु बुचुडे पा. यांचे ज्येष्ठ चिरंजीव <br>
-रा. सावरदरी, ता. खेड, जि. पुणे
-</p>
+<!-- SECTION 2 -->
+<section class="bg2">
+  <div class="overlay">
 
-<p class="big-name">चि.सौ.कां. अपेक्षा</p>
+    <p class="big">चि. मयुर</p>
 
-<p class="bold-text">
-कै. संजय रामचंद्र साळुंखे यांची कन्या <br>
-श्री. विजय रामचंद्र साळुंखे यांची पुतणी <br>
-रा. तळवडे, देवी इंद्रायणी, पुणे
-</p>
+    <p class="text">
+    कै.ह.भ.प. महाद कोंडीबा बुचुडे पा. यांचे नातु <br>
+    व सौ. कविता व श्री. दिलीप महादु बुचुडे पा. यांचे ज्येष्ठ चिरंजीव <br>
+    रा. सावरदरी, ता. खेड, जि. पुणे
+    </p>
 
-<p class="bold-text">
-यांचा शुभविवाह रविवार दि. ३/५/२०२६ रोजी <br>
-सायं. ७ वा. १५ मि. या गोरज मुहूर्तावर
-</p>
+  </div>
+</section>
 
-<h1>विवाहस्थळ</h1>
+<!-- SECTION 3 -->
+<section class="bg3">
+  <div class="overlay">
 
-<p class="bold-text">
-सप्तपदी लॉन्स <br>
-येलवाडी, देह, ता. खेड, जि. पुणे
-</p>
+    <p class="big">चि.सौ.कां. अपेक्षा</p>
 
-<a class="map-btn" href="https://maps.app.goo.gl/NGH2DycPUBD2Z1iN9?g_st=ac" target="_blank">
-📍 Map Location
-</a>
+    <p class="text">
+    कै. संजय रामचंद्र साळुंखे यांची कन्या <br>
+    श्री. विजय रामचंद्र साळुंखे यांची पुतणी <br>
+    रा. तळवडे, देवी इंद्रायणी, पुणे
+    </p>
 
-</div>
+    <p class="text" style="margin-top:10px;">
+    रविवार दि. ३/५/२०२६ <br>
+    सायं. ७ वा. १५ मि.
+    </p>
 
-<!-- Gallery -->
-<div class="gallery">
-  <img src="couple1.jpg">
-  <img src="couple2.jpg">
-  <img src="couple3.jpg">
-  <img src="couple4.jpg">
-</div>
+  </div>
+</section>
 
-<!-- Music -->
-<audio id="bgMusic" src="music.mp3" loop></audio>
+<!-- SECTION 4 -->
+<section class="bg4">
+  <div class="overlay">
+
+    <h1>विवाहस्थळ</h1>
+
+    <p class="text">
+    सप्तपदी लॉन्स <br>
+    येलवाडी, देह, ता. खेड, जि. पुणे
+    </p>
+
+    <a class="map-btn" href="https://maps.app.goo.gl/NGH2DycPUBD2Z1iN9?g_st=ac" target="_blank">
+      📍 Map Location
+    </a>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="bg1">
+  <div class="overlay">
+
+    <h1>Memories</h1>
+
+    <div class="gallery">
+      <img src="couple1.jpg">
+      <img src="couple2.jpg">
+      <img src="couple3.jpg">
+      <img src="couple4.jpg">
+    </div>
+
+  </div>
+</section>
+
+<!-- MUSIC -->
+<audio id="music" src="music.mp3" loop></audio>
 
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
 
-<!-- Diya -->
-<img src="ganpati.png" class="diya">
-
-<!-- Particles -->
 <script>
-for(let i=0;i<15;i++){
-  let p=document.createElement('div');
-  p.className='particle';
-  p.style.left=Math.random()*100+'%';
-  p.style.top=Math.random()*100+'%';
+
+function toggleMusic(){
+  let m=document.getElementById("music");
+  if(m.paused){ m.play(); }
+  else{ m.pause(); }
+}
+
+/* particles */
+for(let i=0;i<20;i++){
+  let p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"%";
+  p.style.bottom="0";
   document.body.appendChild(p);
 }
 
-function toggleMusic(){
-  let music=document.getElementById('bgMusic');
-  if(music.paused){
-    music.play();
-  }else{
-    music.pause();
-  }
-}
 </script>
 
 </body>
