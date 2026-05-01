@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin:0;
+  font-family:'Noto Sans Devanagari', sans-serif;
+  background:url('bg1.jpg') no-repeat center/cover;
+  color:#5a2d0c;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* overlay */
+.overlay{
+  background:rgba(255,255,255,0.85);
+  padding:20px;
+}
+
+/* headings */
+h1{
+  font-size:28px;
+  color:#b30000;
+  margin:10px 0;
+}
+
+.big-name{
+  font-size:26px;
+  font-weight:700;
+  color:#8b0000;
+}
+
+.bold-text{
+  font-weight:600;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ganpati */
+.ganpati img{
+  width:120px;
+  margin:20px 0;
+}
+
+/* map button */
+.map-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:#b30000;
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+  margin-top:10px;
+  font-weight:600;
+}
+
+/* gallery */
+.gallery{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:20px;
+}
+
+.gallery img{
+  width:200px;
+  border-radius:15px;
+}
+
+/* music button */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff6600;
+  color:#fff;
+  padding:12px;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* floating diya */
+.diya{
+  position:fixed;
+  top:10%;
+  left:5%;
+  width:40px;
+  animation:float 4s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+  100%{transform:translateY(0);}
+}
+
+/* particles */
+.particle{
+  position:fixed;
+  width:5px;
+  height:5px;
+  background:gold;
+  border-radius:50%;
+  animation:particleMove 6s infinite;
+}
+
+@keyframes particleMove{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-200px);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<p style="font-size:14px;">|| श्री गणेशाय नमः ||</p>
+
+<div class="ganpati">
+  <img src="ganpati.png">
+</div>
+
+<h1>शुभविवाह सोहळा</h1>
+
+<p class="big-name">चि. मयुर</p>
+
+<p class="bold-text">
+कै.ह.भ.प. महाद कोंडीबा बुचुडे पा. यांचे नातु <br>
+व सौ. कविता व श्री. दिलीप महादु बुचुडे पा. यांचे ज्येष्ठ चिरंजीव <br>
+रा. सावरदरी, ता. खेड, जि. पुणे
+</p>
+
+<p class="big-name">चि.सौ.कां. अपेक्षा</p>
+
+<p class="bold-text">
+कै. संजय रामचंद्र साळुंखे यांची कन्या <br>
+श्री. विजय रामचंद्र साळुंखे यांची पुतणी <br>
+रा. तळवडे, देवी इंद्रायणी, पुणे
+</p>
+
+<p class="bold-text">
+यांचा शुभविवाह रविवार दि. ३/५/२०२६ रोजी <br>
+सायं. ७ वा. १५ मि. या गोरज मुहूर्तावर
+</p>
+
+<h1>विवाहस्थळ</h1>
+
+<p class="bold-text">
+सप्तपदी लॉन्स <br>
+येलवाडी, देह, ता. खेड, जि. पुणे
+</p>
+
+<a class="map-btn" href="https://maps.app.goo.gl/NGH2DycPUBD2Z1iN9?g_st=ac" target="_blank">
+📍 Map Location
+</a>
+
+</div>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="couple1.jpg">
+  <img src="couple2.jpg">
+  <img src="couple3.jpg">
+  <img src="couple4.jpg">
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" src="music.mp3" loop></audio>
+
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
+
+<!-- Diya -->
+<img src="ganpati.png" class="diya">
+
+<!-- Particles -->
+<script>
+for(let i=0;i<15;i++){
+  let p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  p.style.top=Math.random()*100+'%';
+  document.body.appendChild(p);
+}
+
+function toggleMusic(){
+  let music=document.getElementById('bgMusic');
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+}
+</script>
+
+</body>
+</html>
