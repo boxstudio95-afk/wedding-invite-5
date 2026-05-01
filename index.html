@@ -6,7 +6,8 @@
 
 <title>Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Premium Marathi Font -->
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,74 +15,86 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Noto Sans Devanagari', sans-serif;
 }
 
+body{
+  font-family:'Noto Sans Devanagari', sans-serif;
+  overflow-x:hidden;
+}
+
+/* sections */
 section{
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:20px;
   position:relative;
 }
 
-.overlay{
-  background:rgba(255,255,255,0.88);
-  padding:25px;
-  border-radius:20px;
+/* backgrounds */
+.bg1{ background:url('bg1.jpg') center/cover no-repeat; }
+.bg2{ background:url('bg2.jpg') center/cover no-repeat; }
+.bg3{ background:url('bg3.jpg') center/cover no-repeat; }
+.bg4{ background:url('bg4.jpg') center/cover no-repeat; }
+
+/* premium card */
+.card{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(12px);
+  border-radius:22px;
+  padding:28px 22px;
   max-width:520px;
   width:100%;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  box-shadow:0 10px 35px rgba(0,0,0,0.25);
 }
 
-/* backgrounds */
-.bg1{background:url('bg1.jpg') center/cover no-repeat;}
-.bg2{background:url('bg2.jpg') center/cover no-repeat;}
-.bg3{background:url('bg3.jpg') center/cover no-repeat;}
-.bg4{background:url('bg4.jpg') center/cover no-repeat;}
-.bg5{background:url('bg5.jpg') center/cover no-repeat;}
-
+/* headings */
 h1{
+  font-family:'Tiro Devanagari Marathi', serif;
+  font-size:34px;
   color:#b30000;
-  margin:10px 0;
-}
-
-.title{
-  font-size:26px;
-  font-weight:700;
-  color:#8b0000;
+  margin-bottom:10px;
 }
 
 .big{
-  font-size:24px;
-  font-weight:700;
+  font-family:'Tiro Devanagari Marathi', serif;
+  font-size:32px;
   color:#7a0000;
+  margin:12px 0;
 }
 
+/* body text */
 .text{
-  font-size:16px;
-  line-height:1.7;
-  font-weight:600;
+  font-size:19px;
+  line-height:1.8;
   color:#4a2c1a;
+  font-weight:600;
+}
+
+/* small text */
+.top-text{
+  font-size:16px;
+  margin-bottom:10px;
 }
 
 /* ganpati */
 .ganpati img{
-  width:120px;
-  margin:20px 0;
+  width:130px;
+  margin:15px 0;
 }
 
 /* map button */
 .map-btn{
   display:inline-block;
   margin-top:15px;
-  padding:12px 22px;
+  padding:14px 26px;
   background:#b30000;
   color:#fff;
   border-radius:30px;
   text-decoration:none;
+  font-size:18px;
   font-weight:600;
 }
 
@@ -89,7 +102,7 @@ h1{
 .gallery{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:12px;
 }
 
 .gallery img{
@@ -104,31 +117,34 @@ h1{
   right:20px;
   background:#ff6600;
   color:white;
-  padding:14px;
+  padding:15px;
   border-radius:50%;
   font-size:20px;
   cursor:pointer;
-  z-index:999;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* particles */
 .particle{
-  position:fixed;
-  width:5px;
-  height:5px;
+  position:absolute;
+  width:6px;
+  height:6px;
   background:gold;
   border-radius:50%;
   opacity:0.7;
-  animation:float 6s linear infinite;
+  animation:float 6s infinite;
 }
 
 @keyframes float{
   0%{transform:translateY(0);}
-  100%{transform:translateY(-300px);opacity:0;}
+  100%{transform:translateY(-200px);opacity:0;}
 }
 
-html{
-  scroll-behavior:smooth;
+/* mobile */
+@media(max-width:480px){
+  h1{ font-size:28px; }
+  .big{ font-size:26px; }
+  .text{ font-size:18px; }
 }
 
 </style>
@@ -138,9 +154,9 @@ html{
 
 <!-- SECTION 1 -->
 <section class="bg1">
-  <div class="overlay">
+  <div class="card">
 
-    <p style="font-size:14px;">|| श्री गणेशाय नमः ||</p>
+    <p class="top-text">|| श्री गणेशाय नमः ||</p>
 
     <div class="ganpati">
       <img src="ganpati.png">
@@ -148,22 +164,19 @@ html{
 
     <h1>शुभविवाह सोहळा</h1>
 
-    <p class="title">चि. मयुर आणि चि. सौ. का. अपेक्षा</p>
-
   </div>
 </section>
 
 <!-- SECTION 2 -->
 <section class="bg2">
-  <div class="overlay">
+  <div class="card">
 
-    <p class="big">चि. मयुर</p>
+    <div class="big">चि. मयुर</div>
 
     <p class="text">
-    कै.ह.भ.प. महाद कोंडीबा बुचुडे पा.यांचे नातु <br>
-    व सौ. कविता व श्री.दिलीप महादु बुचुडे पा. <br>
-    यांचे ज्येष्ठ चिरंजीव <br>
-    रा.सावरदरी, ता.खेड, जि.पुणे
+    कै.ह.भ.प. महाद कोंडीबा बुचुडे पा. यांचे नातु <br>
+    व सौ. कविता व श्री. दिलीप महादु बुचुडे पा. यांचे ज्येष्ठ चिरंजीव <br>
+    रा. सावरदरी, ता. खेड, जि. पुणे
     </p>
 
   </div>
@@ -171,9 +184,9 @@ html{
 
 <!-- SECTION 3 -->
 <section class="bg3">
-  <div class="overlay">
+  <div class="card">
 
-    <p class="big">चि.सौ.कां. अपेक्षा</p>
+    <div class="big">चि.सौ.कां. अपेक्षा</div>
 
     <p class="text">
     कै. संजय रामचंद्र साळुंखे यांची कन्या <br>
@@ -181,24 +194,17 @@ html{
     रा. तळवडे, देवी इंद्रायणी, पुणे
     </p>
 
-  </div>
-</section>
-
-<!-- SECTION 4 -->
-<section class="bg4">
-  <div class="overlay">
-
-    <p class="text">
-    यांचा शुभविवाह रविवार दि. ३/५/२०२६ रोजी <br>
-    सायं. ७ वा. १५ मि. या गोरज मुहूर्तावर करण्याचे योजिले आहे.
+    <p class="text" style="margin-top:10px;">
+    रविवार दि. ३/५/२०२६ <br>
+    सायं. ७ वा. १५ मि.
     </p>
 
   </div>
 </section>
 
-<!-- SECTION 5 -->
-<section class="bg5">
-  <div class="overlay">
+<!-- SECTION 4 -->
+<section class="bg4">
+  <div class="card">
 
     <h1>विवाहस्थळ</h1>
 
@@ -216,9 +222,9 @@ html{
 
 <!-- GALLERY -->
 <section class="bg1">
-  <div class="overlay">
+  <div class="card">
 
-    <h1>Memories</h1>
+    <h1>आठवणी</h1>
 
     <div class="gallery">
       <img src="couple1.jpg">
@@ -236,7 +242,6 @@ html{
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
 
 <script>
-
 function toggleMusic(){
   let m=document.getElementById("music");
   if(m.paused){ m.play(); }
@@ -244,14 +249,13 @@ function toggleMusic(){
 }
 
 /* particles */
-for(let i=0;i<25;i++){
+for(let i=0;i<20;i++){
   let p=document.createElement("div");
   p.className="particle";
   p.style.left=Math.random()*100+"%";
   p.style.bottom="0";
   document.body.appendChild(p);
 }
-
 </script>
 
 </body>
