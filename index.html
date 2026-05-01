@@ -24,48 +24,53 @@ section{
   align-items:center;
   text-align:center;
   padding:20px;
-  color:#4a2c1a;
   position:relative;
 }
 
-/* overlay */
 .overlay{
   background:rgba(255,255,255,0.88);
   padding:25px;
   border-radius:20px;
-  max-width:500px;
+  max-width:520px;
   width:100%;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* backgrounds */
-.bg1{ background:url('bg1.jpg') center/cover no-repeat; }
-.bg2{ background:url('bg2.jpg') center/cover no-repeat; }
-.bg3{ background:url('bg3.jpg') center/cover no-repeat; }
-.bg4{ background:url('bg4.jpg') center/cover no-repeat; }
+.bg1{background:url('bg1.jpg') center/cover no-repeat;}
+.bg2{background:url('bg2.jpg') center/cover no-repeat;}
+.bg3{background:url('bg3.jpg') center/cover no-repeat;}
+.bg4{background:url('bg4.jpg') center/cover no-repeat;}
+.bg5{background:url('bg5.jpg') center/cover no-repeat;}
 
-/* text styles */
 h1{
   color:#b30000;
   margin:10px 0;
 }
 
-.big{
+.title{
   font-size:26px;
   font-weight:700;
   color:#8b0000;
+}
+
+.big{
+  font-size:24px;
+  font-weight:700;
+  color:#7a0000;
 }
 
 .text{
   font-size:16px;
   line-height:1.7;
   font-weight:600;
+  color:#4a2c1a;
 }
 
 /* ganpati */
 .ganpati img{
   width:120px;
-  margin:15px 0;
+  margin:20px 0;
 }
 
 /* map button */
@@ -103,27 +108,27 @@ h1{
   border-radius:50%;
   font-size:20px;
   cursor:pointer;
+  z-index:999;
 }
 
-/* smooth scroll */
-html{
-  scroll-behavior:smooth;
-}
-
-/* floating particles */
+/* particles */
 .particle{
-  position:absolute;
-  width:6px;
-  height:6px;
+  position:fixed;
+  width:5px;
+  height:5px;
   background:gold;
   border-radius:50%;
   opacity:0.7;
-  animation:float 6s infinite;
+  animation:float 6s linear infinite;
 }
 
 @keyframes float{
   0%{transform:translateY(0);}
-  100%{transform:translateY(-200px);opacity:0;}
+  100%{transform:translateY(-300px);opacity:0;}
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 </style>
@@ -135,13 +140,15 @@ html{
 <section class="bg1">
   <div class="overlay">
 
-    <p>|| श्री गणेशाय नमः ||</p>
+    <p style="font-size:14px;">|| श्री गणेशाय नमः ||</p>
 
     <div class="ganpati">
       <img src="ganpati.png">
     </div>
 
     <h1>शुभविवाह सोहळा</h1>
+
+    <p class="title">चि. मयुर आणि चि. सौ. का. अपेक्षा</p>
 
   </div>
 </section>
@@ -153,9 +160,10 @@ html{
     <p class="big">चि. मयुर</p>
 
     <p class="text">
-    कै.ह.भ.प. महाद कोंडीबा बुचुडे पा. यांचे नातु <br>
-    व सौ. कविता व श्री. दिलीप महादु बुचुडे पा. यांचे ज्येष्ठ चिरंजीव <br>
-    रा. सावरदरी, ता. खेड, जि. पुणे
+    कै.ह.भ.प. महाद कोंडीबा बुचुडे पा.यांचे नातु <br>
+    व सौ. कविता व श्री.दिलीप महादु बुचुडे पा. <br>
+    यांचे ज्येष्ठ चिरंजीव <br>
+    रा.सावरदरी, ता.खेड, जि.पुणे
     </p>
 
   </div>
@@ -173,16 +181,23 @@ html{
     रा. तळवडे, देवी इंद्रायणी, पुणे
     </p>
 
-    <p class="text" style="margin-top:10px;">
-    रविवार दि. ३/५/२०२६ <br>
-    सायं. ७ वा. १५ मि.
-    </p>
-
   </div>
 </section>
 
 <!-- SECTION 4 -->
 <section class="bg4">
+  <div class="overlay">
+
+    <p class="text">
+    यांचा शुभविवाह रविवार दि. ३/५/२०२६ रोजी <br>
+    सायं. ७ वा. १५ मि. या गोरज मुहूर्तावर करण्याचे योजिले आहे.
+    </p>
+
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="bg5">
   <div class="overlay">
 
     <h1>विवाहस्थळ</h1>
@@ -229,7 +244,7 @@ function toggleMusic(){
 }
 
 /* particles */
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
   let p=document.createElement("div");
   p.className="particle";
   p.style.left=Math.random()*100+"%";
